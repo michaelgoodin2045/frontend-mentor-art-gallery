@@ -1,0 +1,33 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.dark {
+  background-color: $clr--black;
+  color: $clr--white;
+  & a {
+    & #icon {
+      fill: $clr--white;
+      transition: all 100ms ease-in;
+    }
+    &:hover {
+      #icon {
+        fill: $clr--copper;
+      }
+    }
+  }
+}
+.copper {
+  background-color: $clr--copper;
+  color: $clr--black;
+  & a {
+    & #icon {
+      fill: $clr--black;
+      transition: all 100ms ease-in;
+    }
+    &:hover {
+      #icon {
+        fill: $clr--white;
+      }
+    }
+  }
+}

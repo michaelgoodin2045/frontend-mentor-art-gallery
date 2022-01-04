@@ -1,0 +1,106 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.location {
+  width: 100%;
+  height: fit-content;
+  & .map-box {
+    width: 100%;
+    height: 550px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 72px 478px;
+    @include a.breakpoint(tablet) {
+      height: 600px;
+      grid-template-rows: 72px 528px;
+    }
+    & a {
+      grid-column: 1;
+      grid-row: 1;
+      z-index: 1;
+      @include a.breakpoint(tablet) {
+        margin-left: 39px;
+      }
+      @include a.breakpoint(tablet) {
+        margin-left: 10.83%;
+      }
+    }
+    & .map-image {
+      width: 100%;
+      height: 550px;
+      background-image: url('../../public/assets/mobile/image-map.png');
+      grid-column: 1;
+      grid-row: 1/2;
+      @include a.breakpoint(tablet) {
+        height: 600px;
+        background-image: url('../../public/assets/tablet/image-map.png');
+      }
+      @include a.breakpoint(laptop) {
+        background-image: url('../../public/assets/desktop/image-map.png');
+        background-position: center;
+      }
+    }
+  }
+  & .address-box {
+    width: 100%;
+    height: 493px;
+    padding: 48px 16px 56px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include a.breakpoint(tablet) {
+      height: 436px;
+      padding: 88px 40px 80px 39px;
+      display: grid;
+      grid-template-columns: 223px 68px 398px;
+      grid-template-rows: 52px 104px 112px;
+    }
+    @include a.breakpoint(laptop) {
+      height: 548px;
+      padding: 104px
+        clamp(0.1px, calc(0.00625rem + ((1vw - 11.1px) * 49.9697)), 165px) 128px
+        clamp(0.1px, calc(0.00625rem + ((1vw - 11.1px) * 49.9697)), 165px);
+      display: grid;
+      grid-template-columns: 350px 220px 540px;
+      grid-template-rows: 60px 128px 128px;
+    }
+    & .address-title {
+      margin-bottom: 48px;
+      @include a.breakpoint(tablet) {
+        font-size: 3.4375rem;
+        line-height: 3.125rem;
+        margin-top: unset;
+        grid-column: 1;
+        grid-row: 1/2;
+      }
+      @include a.breakpoint(laptop) {
+        font-size: 4.375rem;
+        line-height: 4.375rem;
+      }
+    }
+    & .street-address {
+      color: $clr--copper;
+      margin-bottom: 20px;
+      @include a.breakpoint(tablet) {
+        grid-column: 3;
+        grid-row: 1;
+        margin-bottom: unset;
+      }
+    }
+    & .city-address {
+      @include a.breakpoint(tablet) {
+        grid-column: 3;
+        grid-row: 2;
+      }
+    }
+    & .blurb {
+      margin-top: 20px;
+      @include a.breakpoint(tablet) {
+        grid-column: 3;
+        grid-row: 3;
+        margin-top: unset;
+      }
+    }
+  }
+}

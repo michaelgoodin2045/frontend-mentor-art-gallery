@@ -1,0 +1,87 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+.footer {
+  width: 100%;
+  height: 336px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include a.breakpoint(tablet) {
+    width: unset;
+    max-width: 768px;
+    height: 216px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 56px;
+    padding-left: 39px;
+    padding-right: 40px;
+  }
+  @include a.breakpoint(laptop) {
+    max-width: unset;
+    width: 100%;
+    height: 244px;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-left: clamp(
+      0.1px,
+      calc(0.00625rem + ((1vw - 11.1px) * 49.9697)),
+      165px
+    );
+    padding-right: clamp(
+      0.1px,
+      calc(0.00625rem + ((1vw - 11.1px) * 49.9697)),
+      165px
+    );
+  }
+  & .footer-title {
+    width: 45%;
+    margin: 48px 0 0 32px;
+    @include a.breakpoint(tablet) {
+      width: 111px;
+      margin: unset;
+      margin-right: 64px;
+    }
+    @include a.breakpoint(laptop) {
+      width: 175px;
+      margin-right: clamp(
+        23.145px,
+        calc(1.4465625rem + ((1vw - 11.1px) * 30.8652)),
+        125px
+      );
+    }
+  }
+  & .footer-blurb {
+    margin: 0 32px 0 32px;
+    @include a.breakpoint(tablet) {
+      margin: unset;
+      width: 281px;
+      margin-right: 133px;
+    }
+    @include a.breakpoint(laptop) {
+      width: 430px;
+      margin-right: clamp(
+        51.855px,
+        calc(3.2409375rem + ((1vw - 11.1px) * 69.1348)),
+        280px
+      );
+    }
+  }
+  & .socials {
+    width: 100px;
+    height: 20px;
+    margin: 0 32px 48px 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include a.breakpoint(tablet) {
+      margin: unset;
+    }
+    & .social {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

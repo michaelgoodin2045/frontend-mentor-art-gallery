@@ -1,0 +1,49 @@
+@use '../base/' as *;
+@use '../abstracts/' as a;
+
+a {
+  .btn {
+    width: 16.25rem;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    & .btn-location {
+      background-color: $clr--black;
+      color: $clr--white;
+      width: 12.75rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 100ms ease-in;
+    }
+    &:hover {
+      & .btn-location {
+        background-color: $clr--copper;
+      }
+      & .arrow {
+        background-color: $clr--black;
+      }
+    }
+  }
+
+  .arrow {
+    width: 3.5rem;
+    height: 100%;
+    background-color: $clr--copper;
+    transition: all 100ms ease-in;
+
+    &.right {
+      background-image: url('../../public/assets/icon-arrow-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &.left {
+      background-image: url('../../public/assets/icon-arrow-left.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
