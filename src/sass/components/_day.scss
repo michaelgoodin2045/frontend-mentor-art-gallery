@@ -167,7 +167,7 @@
         width: 223px;
         margin-left: 29px;
       }
-      @include a.breakpoint(tablet) {
+      @include a.breakpoint(laptop) {
         margin-bottom: 65px;
         width: 350px;
         margin-left: 48px;
