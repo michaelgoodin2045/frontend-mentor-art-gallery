@@ -546,7 +546,7 @@ p.footer-blurb {
     margin-left: 29px;
   }
 }
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 1110px) {
   .day .box-two .blurb {
     margin-bottom: 65px;
     width: 350px;
